@@ -1034,10 +1034,7 @@ const calcOxCo = (source)=>{
 	return parseInt([...set][0],2)*parseInt([...set2][0],2)
 }
 
-//l(calc(gamma), calc(epsilon))
 
-let set = new Set(s)
-set = [...set]
-l(parseInt(calcRates(s)[0],2)*parseInt(calcRates(s)[1],2))  //parte1
-l(calcOxCo(s))												//parte2
+l(parseInt(calcRates(s)[0],2)*parseInt(calcRates(s)[1],2))  	//part1
+l(calcOxCo(s))   						//part2
 
