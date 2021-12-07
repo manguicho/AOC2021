@@ -4,18 +4,13 @@ const max = Math.max(...s)
 
 const sumatorial= (n)=>{
 	let acc = 0
-	for (let i in Array(Number(n)).fill(0))
+	for (let i=0; i<n;i++)
 		acc+=Number(Number(i)+1)	
 	return acc
 }
+
 const res = new Map()
 for (i=1;i<max;i++)	
-	res.set(i,s.map(e=>sumatorial(Math.abs(e-i))).reduce((a,b)=>a+b)) //remove sumatorial function for p1. p2 runs for 100 seconds!!
+	res.set(i,s.map(e=>sumatorial(Math.abs(e-i))).reduce((a,b)=>a+b)) //remove sumatorial function for p1. 
 
 console.log(console.log([...res.entries()].reduce((a,b) => a[1] > b[1] ? b : a)))
-
-
-
-
-
-
