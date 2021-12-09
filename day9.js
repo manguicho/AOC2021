@@ -3,7 +3,7 @@ let s = `2199943210
 9856789892
 8767896789
 9899965678`.split("\n")
-s = s.map((e,j)=>e.split("").map(Number))//.map((f,k)=>set.set(j.toString()+","+k.toString(),f)))
+s = s.map((e,j)=>e.split("").map(Number))
 
 const nearby = (y,x) =>
   [
