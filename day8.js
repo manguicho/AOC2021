@@ -227,15 +227,8 @@ gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce
 // Los que tienen 5 de long y contiene el 1  son el 3
 // Los que tienen 5 de long y cotiene 1 segmento de la diferencia entre el 9 y el 8 es el 2
 // else 5
-const l=(...x)=>{console.log(...x);return x[0]}
-const ll=(...x)=>{return x[0]}
-
-
-
 
 const knowns = {2:1, 4:4, 3:7, 7:8}
-
-
 
 const getPatterns = (tuple)=>{
 	let patterns = {}
@@ -243,7 +236,6 @@ const getPatterns = (tuple)=>{
 	left.filter(e=>[2,3,4,7].includes(e[1])).map(e=>patterns[knowns[e[1]]]=e[0])		
 	while (true){					
 		for (o of left){
-			//if (patterns.hasOwnProperty(9))(o,patterns[8].split("").filter(x => !patterns[9].split("").includes(x)))
 			//6,9,0
 			if (o[1]==6 	 && o[0].split("").filter(e=>patterns[1].split("").includes(e)).length==1)    patterns[6]=o[0]
 			else if (o[1]==6 && o[0].split("").filter(e=>patterns[4].split("").includes(e)).length==4)    patterns[9]=o[0]
@@ -266,10 +258,8 @@ const calc =(tuple)=>{
 	return Number(str)
 }
 
-
 console.log("P1",s.map(e=>e.split(" | ")[1]).map(e=>e.split(" ").filter(f=>[2,3,4,7].includes(f.length)).length).reduce((a,b)=>a+b))
-
-l(s.map(e=>calc(e)).reduce((a,b)=>a+b))
+console.log("P2",s.map(e=>calc(e)).reduce((a,b)=>a+b))
 
 
 
