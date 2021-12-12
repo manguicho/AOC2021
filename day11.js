@@ -17,9 +17,6 @@ ss=`11111
 11111`.split('\n') //EXAMPLE
     .map(e => e.split('').map(e => parseInt(e)));
 
-const l=(...x)=>{console.log(...x);return x[0]}
-function sum(...x){if(Array.isArray(x[0])) return x[0].reduce((a,b)=>a+b,0); else return x.reduce((a,b)>a+b,0);}
-
 const nearby = (y,x) =>
   [
     [(y), (x) - 1],
@@ -59,15 +56,8 @@ const solve= (input, steps,p2=false)=>
 		total.push(flashed.length)
 		if (input.filter(e=>e.join("") == "0000000000").length==10) return parseInt(i)+1
 	}
-	return sum(total)
+	return total.reduce((a,b)=>a+b)
 }
 
 console.log("P1", solve(s,100,false))  
 console.log("P2", solve(s,Infinity,true))  
-
-
-
-
-
-
-
