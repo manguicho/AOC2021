@@ -35,7 +35,7 @@ const flash = (input, y,x)=>{
 	let neighbours = nearby(y,x)
 	for (n of neighbours){		
 		let num = 0; num = parseInt(input[n[0]][n[1]])		
-		if (!flashed.map(e=>e.join("")).includes(n.join("")) && num<10 && num > 0){
+		if (!flashed.map(e=>e.join(",")).includes(n.join(",")) && num<10 && num > 0){
 			input[n[0]][n[1]] = num+1; //l(y,x,n,s[n[0]][n[1]])
 			if (input[n[0]][n[1]] == 10) 	flash(input, n[0],n[1])
 		} 
